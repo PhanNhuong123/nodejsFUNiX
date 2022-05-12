@@ -1,21 +1,35 @@
 const http = require("http");
 const fs = require("fs");
+const { buffer } = require("stream/consumers");
 
 const server = http.createServer((req, res) => {
-  console.log(req.url, req.method, req.headers);
+  // console.log(req.url, req.method, req.headers);
   const url = req.url;
-  const method = req.method
+  const method = req.method;
   if (url === "/") {
     res.write("<html>");
     res.write("<head><title>message</title></head>");
     res.write(
-      '<body><form action="/message" method="POST" ><input type="text"  ><button type="submit" >Send</button></form >'
+      '<body><form action="/message" method="POST" ><input type="text" name="kkk" ><button type="submit" >Send</button></form >'
     );
     res.write("</html>");
     return res.end();
   }
-  if(url === "/message" && method === "POST") {
-    fs.writeFileSync("message.txt", "DUMY");
+  if (url === "/message" && method === "POST") {
+    const body = [];
+    
+
+    req.on("data", (chuck) => {
+      console.log(chuck);
+      body.push(chuck);
+    });
+    req.on("end", () => {
+      const parseBody = Buffer.concat(body).toString();
+      const message = parseBody.split('=')[1];
+
+      fs.writeFileSync("message.txt", message);
+    });
+
     res.statusCode = 302;
     res.setHeader("location", "/");
     return res.end();
