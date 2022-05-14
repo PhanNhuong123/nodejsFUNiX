@@ -1,0 +1,23 @@
+{
+  "name": "firstapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhanNhuong123/nodejsFUNiX.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhanNhuong123/nodejsFUNiX/issues"
+  },
+  "homepage": "https://github.com/PhanNhuong123/nodejsFUNiX#readme",
+  "dependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
