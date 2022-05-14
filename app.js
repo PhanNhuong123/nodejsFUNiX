@@ -1,7 +1,9 @@
 const http = require("http");
-const { buffer } = require("stream/consumers");
-const router = require('./routes')
 
-const server = http.createServer(router.handler)
+const express = require("express")
+
+const app = express()
+
+const server = http.createServer(app)
 
 server.listen(3000);
