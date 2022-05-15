@@ -4,22 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/index.css">
+
     <title>Add Product</title>
   </head>
   <body>
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <header>
-      <nav>
-        <ul class="w-3/6 mx-auto h-10 mt-3  " >
-          <a class="font-medium mx-1 text-white text-center text-sm rounded shadow-sm py-3 px-3 bg-blue-400 hover:shadow-md " href="/">Shop</a>
-          <a class="font-medium mx-1 text-white text-center text-sm rounded shadow-sm py-3 px-3 bg-blue-400 hover:shadow-md " href="/add-product">Add Product</a>
-        </ul>
+    <header  class="flex py-1 rounded-md  justify-center border-2  mx-auto shadow-md  mb-3">
+      <nav class="flex justify-start  w-10/12 ">
+          <a class="font-medium mx-1 w-2/12  text-white text-center text-sm rounded shadow-sm py-3 px-3 bg-blue-400 hover:shadow-md " href="/">Shop</a>
+          <a class="font-medium mx-1 w-2/12 text-white text-center text-sm rounded shadow-sm py-3 px-3 bg-blue-400 hover:shadow-md " href="/add-product">Add Product</a>
       </nav>
     </header>
     <main>
-      <form action="/admin/add-product" method="post" class="w-1/2 mx-auto p-12 border-2 border-blue-200 hover:border-blue-300 hover:shadow-lg shadow-sm rounded-lg" >
+      <form action="/admin/add-product" method="post" class="w-1/2 mx-auto p-12    hover:shadow-lg shadow-md rounded-lg" >
+       <label for="title">Title</label>
         <input
+        id="title"
           type="text"
           class="mt-1 block w-full px-3 py-2 bg-white border
            border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
