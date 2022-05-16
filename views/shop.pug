@@ -4,7 +4,7 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='/src/index.css')
-  title Add Product
+  title #{shopTitle}
 script(src='https://cdn.tailwindcss.com')
 header.flex.py-1.justify-center.border-2.mx-auto.shadow-md.mb-3
   nav.flex.justify-start(class='w-11/12')
@@ -12,4 +12,22 @@ header.flex.py-1.justify-center.border-2.mx-auto.shadow-md.mb-3
     a.font-medium.mx-1.text-white.text-center.text-sm.rounded.shadow-sm.py-3.px-3.bg-blue-400(class='w-2/12 hover:shadow-md' href='/admin/add-product') Add Product
 main.container.mx-auto.py-4
   h1.text-xl.text.font-medium My Product
-  p List of all the product ......
+main
+  .container.mx-auto.py-2.mb-2(class='w-11/12')
+    if pros.length > 0
+      ul.list-items.w-full.flex.justify-start.flex-wrap
+        each product in pros
+          li.list-items__item.flex.justify-center(class='w-3/12')
+            .list-items__item-content.shadow-md.rounded(class='w-11/12 hover:shadow-lg')
+              .item-title.text-center.py-1.font-medium.text-lg
+                | #{product.title}
+              img(src='https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+              .price.text-center $19.99
+              .text-content.text-center
+                | A very interesting book about so many even more interesting!
+              .button.w-full.flex.justify-center.py-2
+                button.button__add-cart.p-1.font-medium.border-2.border-blue-500.rounded-md.text-blue-500(class='hover:bg-blue-500 hover:text-white')
+                  | Add to Cart
+    else 
+        .text-center 
+          h1 No Product 
