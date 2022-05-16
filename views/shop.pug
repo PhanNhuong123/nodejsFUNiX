@@ -1,18 +1,11 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+extends layouts/main-layout.pug
+block styles
   link(rel='stylesheet' href='/src/index.css')
-  title #{shopTitle}
-script(src='https://cdn.tailwindcss.com')
-header.flex.py-1.justify-center.border-2.mx-auto.shadow-md.mb-3
-  nav.flex.justify-start(class='w-11/12')
-    a.font-medium.mx-1.text-white.text-center.text-sm.rounded.shadow-sm.py-3.px-3.bg-blue-400(class='w-2/12 hover:shadow-md' href='/') Shop
-    a.font-medium.mx-1.text-white.text-center.text-sm.rounded.shadow-sm.py-3.px-3.bg-blue-400(class='w-2/12 hover:shadow-md' href='/admin/add-product') Add Product
-main.container.mx-auto.py-4
-  h1.text-xl.text.font-medium My Product
-main
+  script(src='https://cdn.tailwindcss.com')
+block content
+  main.container.mx-auto.py-4
+    h1.text-xl.text.font-medium My Product
+  main
   .container.mx-auto.py-2.mb-2(class='w-11/12')
     if pros.length > 0
       ul.list-items.w-full.flex.justify-start.flex-wrap
