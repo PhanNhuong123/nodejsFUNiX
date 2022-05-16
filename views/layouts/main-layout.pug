@@ -4,9 +4,9 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   block styles
-  title Page not found
+  title #{pageTitle}
 header.flex.py-1.justify-center.border-2.mx-auto.shadow-md.mb-3
   nav.flex.justify-start(class='w-11/12')
-    a.font-medium.mx-1.text-white.text-center.text-sm.rounded.shadow-sm.py-3.px-3.bg-blue-400(class='w-2/12 hover:shadow-md' href='/') Shop
-    a.font-medium.mx-1.text-white.text-center.text-sm.rounded.shadow-sm.py-3.px-3.bg-blue-400(class='w-2/12 hover:shadow-md' href='/admin/add-product') Add Product
+    a.font-medium.mx-1.text-white.text-center.text-sm.rounded.shadow-sm.py-3.px-3.bg-blue-400(class=(path === '/' ? 'text-yellow-400 w-2/12 hover:shadow-md' :   'w-2/12 hover:shadow-md') href='/') Shop
+    a.font-medium.mx-1.text-white.text-center.text-sm.rounded.shadow-sm.py-3.px-3.bg-blue-400(class=(path === '/' ? 'w-2/12 hover:shadow-md' :   'w-2/12 hover:shadow-md text-yellow-400') href='/admin/add-product') Add Product
 block content
