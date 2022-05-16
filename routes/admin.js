@@ -7,7 +7,7 @@ const product = []
 
 router.get("/add-product", (req, res, next) => {
   // res.sendFile(path.join(rootDir, 'views', 'add-product.html'))
-  res.render('add-product' , {  title: 'Add Product', pageTitle: 'Add Products'})
+  res.render('add-product' , {  title: 'Add Product', pageTitle: 'Add Products',layout: false})
 });
 
 router.post("/add-product", (req, res, next) => {
