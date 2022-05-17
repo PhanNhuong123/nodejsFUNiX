@@ -13,7 +13,7 @@ const port = 3000;
 
 const app = express();
 
-app.engine("hdb", handleBars());
+app.engine("hdb", handleBars({extname: 'hdb' , defaultLayout: 'main-layout'}));
 app.set("view engine", "hdb");
 app.set("views", "views");
 
