@@ -13,8 +13,8 @@ const port = 3000;
 
 const app = express();
 
-app.engine("hdb", handleBars({extname: 'hdb' , defaultLayout: 'main-layout'}));
-app.set("view engine", "hdb");
+// app.engine("hdb", handleBars({extname: 'hdb' , defaultLayout: 'main-layout'}));
+app.set("view engine", "ejs");
 app.set("views", "views");
 
 app.use(bodyParser.urlencoded({ extended: false }));
